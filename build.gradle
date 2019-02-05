@@ -6,10 +6,11 @@
  */
 
 plugins{
-
+    id "org.sonarqube" version "2.7"
 }
 apply plugin: 'java'
 apply plugin: 'jacoco'
+apply plugin: 'org.sonarqube'
 
 
 targetCompatibility= '1.8'
@@ -32,13 +33,13 @@ task helloword {
 }
 
 task helloword2 {
-    dependsOn 'helloword'
+    dependsOn 'helloworld'
     doLast {
         println "wel come - task 2"
     }
 }
 
 test{
-    
+
 }
 test.dependsOn helloword
